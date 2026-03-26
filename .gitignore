@@ -2,6 +2,8 @@
 .godot/
 .nomedia
 
+#godot assets ignore
+assets
 # Godot-specific ignores
 .import/
 export.cfg
