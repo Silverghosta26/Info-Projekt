@@ -14,6 +14,10 @@ config/name="Info-Projekt"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://assets/icon.svg"
 
+[dotnet]
+
+project/assembly_name="Info-Projekt"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
