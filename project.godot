@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Info-Projekt"
+run/main_scene="uid://bj62q24ut0mlu"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://assets/icon.svg"
 
