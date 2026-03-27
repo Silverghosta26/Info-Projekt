@@ -2,7 +2,40 @@
 
 [ext_resource type="Texture2D" uid="uid://deeaan8qjyldu" path="res://assets/textures_02_08_25.png" id="1_cljdu"]
 [ext_resource type="Texture2D" uid="uid://o23jwpfuh8ig" path="res://assets/Green.png" id="1_uvd1l"]
+[ext_resource type="Texture2D" uid="uid://xdgewe1qmbc1" path="res://assets/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Run.png" id="2_f87w0"]
 [ext_resource type="Texture2D" uid="uid://wjoqaoc42r3c" path="res://assets/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_p4erq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwca4"]
+atlas = ExtResource("2_f87w0")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upgg8"]
+atlas = ExtResource("2_f87w0")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqcie"]
+atlas = ExtResource("2_f87w0")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqhdm"]
+atlas = ExtResource("2_f87w0")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqkku"]
+atlas = ExtResource("2_f87w0")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i02l"]
+atlas = ExtResource("2_f87w0")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hgop"]
+atlas = ExtResource("2_f87w0")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnl6u"]
+atlas = ExtResource("2_f87w0")
+region = Rect2(560, 0, 80, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f87w0"]
 atlas = ExtResource("2_p4erq")
@@ -34,6 +67,35 @@ region = Rect2(480, 0, 80, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bwca4"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwca4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upgg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqcie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqhdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqkku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i02l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hgop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnl6u")
+}],
+"loop": true,
+"name": &"Mushroom Run",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f87w0")
@@ -693,7 +755,7 @@ stretch_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1201614233]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1240759270]
-position = Vector2(541, 274)
+position = Vector2(580, 373)
 sprite_frames = SubResource("SpriteFrames_bwca4")
 autoplay = "default"
 
