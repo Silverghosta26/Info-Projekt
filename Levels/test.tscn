@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bj62q24ut0mlu"]
+
+[node name="Node" type="Node" unique_id=909859655]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=769280250]
+offset_right = 557.0
+offset_bottom = 341.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=40444699]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1434505690]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1201614233]
