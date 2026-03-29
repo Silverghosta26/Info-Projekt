@@ -755,9 +755,10 @@ stretch_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1201614233]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1240759270]
-position = Vector2(580, 373)
+position = Vector2(616, 361)
 sprite_frames = SubResource("SpriteFrames_bwca4")
-autoplay = "default"
+animation = &"Mushroom Run"
+autoplay = "Mushroom Run"
 
 [node name="TileMap" type="TileMap" parent="." unique_id=481974308]
 tile_set = SubResource("TileSet_p4erq")
