@@ -13,4 +13,4 @@ Nicht beschränkt auf die genannten Themengebiete, jeder arbeitet überall ein w
 Uploads/Changes:
     22.04.2026
         aufsetzung des Godotprojekts inklusive des Readme/Dokumentation
-        1. upload von Lorenz: first tile set 22.04.2026
+        1. upload von Lorenz: first tile set 22.04.2026, fehlerhafter upload korrigiert
