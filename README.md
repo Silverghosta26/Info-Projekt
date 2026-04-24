@@ -17,3 +17,6 @@ Uploads/Changes:
 		upload von Jonathan: Dateisystemstruktur verbessert, 1. scene hinzugefügt als "game", player hinzugefügt incl. sprite sheed "ritter", auto animation idle 
 	23.04.2026
 		upload von Jonathan: basis elemente hinzugefügt, grundstruktur für lvl bau gelegt
+	24.04.2026
+		upload von Jonathan: neue Elemente hinzugefügt z.B Musik und test Level erstellt mit
+			bewegenden Plattformen, Münzen und 2 Tilesets: background + Blöcke
