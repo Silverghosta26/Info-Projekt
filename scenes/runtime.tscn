@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bi6klmvw7mx61"]
+
+[ext_resource type="Script" uid="uid://bsx34nfsi460f" path="res://runtime.gd" id="1_u3pyt"]
+
+[node name="runtime" type="Label" unique_id=1286068585]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_u3pyt")
+
+[node name="Timer" type="Timer" parent="." unique_id=1615644988]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
