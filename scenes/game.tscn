@@ -242,10 +242,6 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_p57ef"]
-a = Vector2(-929, -34)
-b = Vector2(985, 19)
-
 [node name="Game" type="Node2D" unique_id=1248583018]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2012885908]
@@ -311,13 +307,3 @@ position = Vector2(1213, 240)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/killzone" unique_id=1752498045]
 shape = SubResource("WorldBoundaryShape2D_p57ef")
-
-[node name="parcour" parent="Node" unique_id=1909497315 instance=ExtResource("4_iywne")]
-position = Vector2(719, -166)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/parcour" unique_id=255520618]
-shape = SubResource("SegmentShape2D_p57ef")
-
-[node name="parcourspawn" type="Marker2D" parent="." unique_id=23764043]
-unique_name_in_owner = true
-position = Vector2(1586, -232)

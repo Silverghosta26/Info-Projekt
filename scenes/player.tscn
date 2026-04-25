@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(12, 16)
+size = Vector2(10, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=1139590716]
 collision_layer = 2

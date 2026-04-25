@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
-@onready var parcourspawn: Marker2D = %parcourspawn
 
 
 
@@ -9,7 +8,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if self.name == "parcour":
 		print("reset parcour")
-		body.global_position = parcourspawn.global_position
+		#body.global_position = parcourspawn.global_position
 	else: timer.start()
 
 
