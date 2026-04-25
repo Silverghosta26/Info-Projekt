@@ -4,6 +4,8 @@ extends Area2D
 @onready var parcourspawn: Marker2D = %parcourspawn
 
 
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if self.name == "parcour":
 		print("reset parcour")
