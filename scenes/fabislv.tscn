@@ -169,7 +169,7 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7e35"]
 distance = 57.0
 
-[node name="Game" type="Node2D" unique_id=1248583018]
+[node name="Game2" type="Node2D" unique_id=1248583018]
 
 [node name="tilemaps" type="Node" parent="." unique_id=973275066]
 
