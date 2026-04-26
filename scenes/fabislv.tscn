@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/player.tscn" id="2_7e0aa"]
 [ext_resource type="Script" uid="uid://4rk8qhxykqpi" path="res://Scripts/camera_2d.gd" id="3_rtttf"]
 [ext_resource type="PackedScene" uid="uid://ck8prrxqugyme" path="res://scenes/coin.tscn" id="4_j58t6"]
+[ext_resource type="PackedScene" uid="uid://f7lohvhcwm6x" path="res://scenes/portal.tscn" id="6_tmfup"]
 [ext_resource type="PackedScene" uid="uid://c2lrr205xxw2b" path="res://scenes/killzone.tscn" id="7_dees2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -168,6 +169,25 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7e35"]
 distance = 57.0
 
+[sub_resource type="Animation" id="Animation_rtttf"]
+resource_name = "closing"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_udx6c"]
+_data = {
+&"closing": SubResource("Animation_rtttf")
+}
+
 [node name="Game" type="Node2D" unique_id=1248583018]
 
 [node name="tilemaps" type="Node" parent="." unique_id=973275066]
@@ -201,7 +221,7 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Player" parent="." unique_id=1139590716 instance=ExtResource("2_7e0aa")]
 process_priority = 5
-position = Vector2(39, 47)
+position = Vector2(65, 23)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1583720375]
 position = Vector2(0, 3)
@@ -241,3 +261,9 @@ position = Vector2(424, 582)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=377921069]
 shape = SubResource("WorldBoundaryShape2D_j7e35")
+
+[node name="portal" parent="." unique_id=1044100374 instance=ExtResource("6_tmfup")]
+position = Vector2(57, 17)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="portal" unique_id=1197993742]
+libraries/ = SubResource("AnimationLibrary_udx6c")
