@@ -31,3 +31,4 @@ Uploads/Changes:
 		upload jonathan & lorenz: zusammenarbeit am projekt, bearbeitung von skripten und erstellung neues level von lorenz
 		upload jonathan: slime realistische bewegung geadded mit sprite flip bei change und output für blockdetektor im charakter hinzugefügt, on ice verändert jetzt
 			bewegungsverhalten
+		upload jonathan: weitere änderungen: ducken macht player langsamer siehe multiplier player.gd, am eigenen/test level weitergearbeitet und ordnerstruktur verbessert
