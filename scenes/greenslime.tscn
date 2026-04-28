@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cc08ktvwq2fmc"]
 
+[ext_resource type="Script" uid="uid://cuo0opulsijh5" path="res://scenes/greenslime.gd" id="1_64pfu"]
 [ext_resource type="Texture2D" uid="uid://invupavdyuu7" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_r8u5p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64pfu"]
@@ -164,6 +165,7 @@ animations = [{
 size = Vector2(16, 15)
 
 [node name="greenslime" type="Area2D" unique_id=1359272469]
+script = ExtResource("1_64pfu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=656648034]
 position = Vector2(0, -5)

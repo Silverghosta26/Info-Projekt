@@ -4,6 +4,14 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
+# Beschleunigung / Reibung
+const ACCEL_NORMAL = 1200.0
+const FRICTION_NORMAL = 1000.0
+
+const ACCEL_ICE = 400.0
+const FRICTION_ICE = 200.0
+
+var icemove: bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var tilemap = get_tree().current_scene.find_child("tiles", true, false)
 @onready var hitbox: CollisionShape2D = $hitbox
@@ -32,17 +40,14 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("ducken"):
 		hurtbox.disabled = true
-		print("disabled")
+		#print("disabled")
 	else:
 		hurtbox.disabled = false
-		print("enabled")
+		#print("enabled")
 
 	# flip sprite depending on direction
-	if direction > 0:
-		animated_sprite_2d.flip_h = false
-		
-	if direction < 0:
-		animated_sprite_2d.flip_h = true
+	if direction != 0:
+		animated_sprite_2d.flip_h = direction < 0
 
 
 	# play animations
@@ -57,17 +62,28 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite_2d.play("jump")
 
+	# Eis oder normale Werte
+	var accel = ACCEL_ICE if icemove else ACCEL_NORMAL
+	var friction = FRICTION_ICE if icemove else FRICTION_NORMAL
 
-	# movement
-	if direction:
-		velocity.x = direction * SPEED
+	# TARGET SPEED
+	var target_velocity_x = direction * SPEED
+
+	# bewegung
+	if direction != 0:
+		velocity.x = move_toward(velocity.x, target_velocity_x, accel * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
+
 	move_and_slide()
 	
-	#check_tile_below() # um  zu prüfen welche tile unter dem player ist etc
-	
+	check_tile_below()  # um  zu prüfen welche tile unter dem player ist etc
+
+
+
+
 func check_tile_below():
+
 	var left = global_position + Vector2(-5, 13) #nimmt die player position und added 5 bzw -5 um kante des spieler hitbox zu erreichen
 	var right = global_position + Vector2(5, 13) #added 13 bei beiden umuntere kante des spieler bzw den block darunter zu erreichen
 
@@ -80,8 +96,7 @@ func check_tile_below():
 	if tile_left != -1 or tile_right != -1:  #beispiel methode, momnentan unrelewand
 		#print("Auf Boden")
 		pass
-		# 👉 Infos holen (linke Seite als Beispiel)
-		
+
 	if tile_left != -1: #falls methode oben wert bekommt wird atlascoo über tilemap abgefragt anhand von wert der 2. methode
 		var atlas = tilemap.get_cell_atlas_coords(cell_left)
 		handle_tile(tile_left, atlas)
@@ -95,11 +110,11 @@ func check_tile_below():
 		pass
 
 func handle_tile(tile_id, atlas_coords): #kann aktionen anhand der ergebnisse von oben ausfürhen
-	# Beispiel: Lava Tile
 	if atlas_coords in ice_tiles:
 		print("Spieler steht auf Eis")
-		
+		icemove = true
 
 	# Beispiel: Gras Tile
 	elif atlas_coords == Vector2i(0, 0):
 		print("Gras")
+		icemove = false
