@@ -18,13 +18,14 @@ Uploads/Changes:
 	23.04.2026
 		upload von Jonathan: basis elemente hinzugefügt, grundstruktur für lvl bau gelegt
 	24.04.2026
-		upload von Jonathan: neue Elemente hinzugefügt z.B Musik und test Level erstellt mit
-			bewegenden Plattformen, Münzen und 2 Tilesets: background + Blöcke
- 25.04.2026
-  uploads fabian unf jonathan: gemeinsame arebit am projekt in mehreren gebieten bei fabi
- 26.04.2026
-  upload fabian: hinzufügung "bosslevel" unvollständig/grob
-  upload jonathan: verschiedene veränderungen an scripten und einstellungen des projekts
- 27.04.2026
-  upload jonathan: behebung eines problems mit camera2d - fehlerhafter filepath
+		upload von Jonathan: neue Elemente hinzugefügt z.B Musik und test Level erstellt mit bewegenden Plattformen, Münzen und Tilesets: background + Blöcke
+	25.04.2026
+		uploads fabian unf jonathan: gemeinsame arebit am projekt in mehreren gebieten bei fabi
+	26.04.2026
+		upload fabian: hinzufügung "bosslevel" unvollständig/grob
+		upload jonathan: verschiedene veränderungen an scripten und einstellungen des projekts
+	27.04.2026
+		upload jonathan: behebung eines problems mit camera2d - fehlerhafter filepath
 		uncommitted lorenz: einführung erstellung level/scene erster eigener levelbau
+	28.04.2026
+		upload jonathan & lorenz: zusammenarbeit am projekt, bearbeitung von skripten und erstellung neues level von lorenz
