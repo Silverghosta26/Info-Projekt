@@ -29,3 +29,5 @@ Uploads/Changes:
 		uncommitted lorenz: einführung erstellung level/scene erster eigener levelbau
 	28.04.2026
 		upload jonathan & lorenz: zusammenarbeit am projekt, bearbeitung von skripten und erstellung neues level von lorenz
+		upload jonathan: slime realistische bewegung geadded mit sprite flip bei change und output für blockdetektor im charakter hinzugefügt, on ice verändert jetzt
+			bewegungsverhalten
