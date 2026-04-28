@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dlj800qnewf45" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://davokuxhviw17" path="res://Scripts/player.gd" id="1_g2els"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(64, 160, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(0, 0, 32, 32)
@@ -91,6 +95,14 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
 }, {
 "duration": 1.0,
@@ -171,15 +183,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(10, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(8, 10)
+
 [node name="Player" type="CharacterBody2D" unique_id=1139590716]
 collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1101220497]
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"run"
+animation = &"duck"
 autoplay = "idle"
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1549573807]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="hurtbox" type="CollisionShape2D" parent="." unique_id=2088895854]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_qhqgy")
