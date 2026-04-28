@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cc08ktvwq2fmc"]
 
-[ext_resource type="Script" uid="uid://cuo0opulsijh5" path="res://scenes/greenslime.gd" id="1_64pfu"]
+[ext_resource type="Script" uid="uid://cuo0opulsijh5" path="res://Scripts/greenslime.gd" id="1_64pfu"]
 [ext_resource type="Texture2D" uid="uid://invupavdyuu7" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_r8u5p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64pfu"]

@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
-# Beschleunigung / Reibung
+# Beschleunigung & Reibung
 const ACCEL_NORMAL = 1200.0
 const FRICTION_NORMAL = 1000.0
 
@@ -12,6 +12,8 @@ const ACCEL_ICE = 400.0
 const FRICTION_ICE = 200.0
 
 var icemove: bool = false
+var speed_multiplier := 1.0
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var tilemap = get_tree().current_scene.find_child("tiles", true, false)
 @onready var hitbox: CollisionShape2D = $hitbox
@@ -40,9 +42,11 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("ducken"):
 		hurtbox.disabled = true
+		speed_multiplier = 0.5  
 		#print("disabled")
 	else:
 		hurtbox.disabled = false
+		speed_multiplier = 1.0
 		#print("enabled")
 
 	# flip sprite depending on direction
@@ -50,24 +54,25 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = direction < 0
 
 
-	# play animations
-	if is_on_floor():
-		if Input.is_action_pressed("ducken"):
-			animated_sprite_2d.play("duck")
-		else:
-			if direction ==0:
-				animated_sprite_2d.play("idle")
-			else:
-				animated_sprite_2d.play("run")
+	var anim = ""
+
+	if not is_on_floor():
+		anim = "jump"
+	elif Input.is_action_pressed("ducken"):
+		anim = "duck"
+	elif direction == 0:
+		anim = "idle"
 	else:
-		animated_sprite_2d.play("jump")
+		anim = "run"
+
+	animated_sprite_2d.play(anim)
 
 	# Eis oder normale Werte
 	var accel = ACCEL_ICE if icemove else ACCEL_NORMAL
 	var friction = FRICTION_ICE if icemove else FRICTION_NORMAL
 
 	# TARGET SPEED
-	var target_velocity_x = direction * SPEED
+	var target_velocity_x = direction * SPEED * speed_multiplier
 
 	# bewegung
 	if direction != 0:
@@ -99,22 +104,22 @@ func check_tile_below():
 
 	if tile_left != -1: #falls methode oben wert bekommt wird atlascoo über tilemap abgefragt anhand von wert der 2. methode
 		var atlas = tilemap.get_cell_atlas_coords(cell_left)
-		handle_tile(tile_left, atlas)
+		handle_tile(atlas)
 
 	if tile_right != -1:
 		var atlas = tilemap.get_cell_atlas_coords(cell_right) #gleiches wie oben nur rechter punkt shatt links
-		handle_tile(tile_right, atlas)
+		handle_tile(atlas)
 
 	else: #beispielmethode, momentan unrelewand
 		#print("In der Luft")
 		pass
 
-func handle_tile(tile_id, atlas_coords): #kann aktionen anhand der ergebnisse von oben ausfürhen
+func handle_tile(atlas_coords): #kann aktionen anhand der ergebnisse von oben ausfürhen
 	if atlas_coords in ice_tiles:
-		print("Spieler steht auf Eis")
+		#print("Spieler steht auf Eis")
 		icemove = true
 
 	# Beispiel: Gras Tile
 	elif atlas_coords == Vector2i(0, 0):
-		print("Gras")
+		#print("Gras")
 		icemove = false
