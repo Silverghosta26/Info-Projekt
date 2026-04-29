@@ -5,11 +5,11 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 # Beschleunigung & Reibung
-const ACCEL_NORMAL = 1500.0
-const FRICTION_NORMAL = 1500.0
+const ACCEL_NORMAL = 1000.0
+const FRICTION_NORMAL = 1000.0
 
 const ACCEL_ICE = 400.0
-const FRICTION_ICE = 200.0
+const FRICTION_ICE = 50.0
 var watermove: bool = false
 var icemove: bool = false
 var speed_multiplier := 1.0
@@ -36,6 +36,7 @@ var water_tiles = [
 ]
 
 func _physics_process(delta: float) -> void:
+	check_tile_below()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -43,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("goleft", "goright")
@@ -90,12 +91,15 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	check_tile_below()  # um  zu prüfen welche tile unter dem player ist etc
+	check_tile_below() # um  zu prüfen welche tile unter dem player ist etc
 
 
 
 
-func check_tile_below():
+func check_tile_below():	
+
+	icemove = false
+	watermove = false
 
 	var left = global_position + Vector2(-5, 13) #nimmt die player position und added 5 bzw -5 um kante des spieler hitbox zu erreichen
 	var right = global_position + Vector2(5, 13) #added 13 bei beiden umuntere kante des spieler bzw den block darunter zu erreichen
@@ -124,15 +128,6 @@ func check_tile_below():
 
 func handle_tile(atlas_coords): #kann aktionen anhand der ergebnisse von oben ausfürhen
 	if atlas_coords in ice_tiles:
-		#print("Spieler steht auf Eis")
 		icemove = true
-
 	if atlas_coords in water_tiles:
-		print("Spieler in Wasser")
 		watermove = true
-
-	# Beispiel: Gras Tile
-	else:
-		#print("Gras")
-		icemove = false
-		watermove =false

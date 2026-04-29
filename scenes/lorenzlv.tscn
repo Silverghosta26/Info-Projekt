@@ -443,7 +443,8 @@ z_index = 5
 position = Vector2(405, 211)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=52477711]
-position = Vector2(-20, 119)
+position = Vector2(0, 5)
+zoom = Vector2(4, 4)
 
 [node name="portal" parent="." unique_id=1044100374 instance=ExtResource("3_cmda7")]
 position = Vector2(1478, 197)
