@@ -5,12 +5,12 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 # Beschleunigung & Reibung
-const ACCEL_NORMAL = 1200.0
-const FRICTION_NORMAL = 1000.0
+const ACCEL_NORMAL = 1500.0
+const FRICTION_NORMAL = 1500.0
 
 const ACCEL_ICE = 400.0
 const FRICTION_ICE = 200.0
-
+var watermove: bool = false
 var icemove: bool = false
 var speed_multiplier := 1.0
 
@@ -25,6 +25,14 @@ var ice_tiles = [
 	Vector2i(7, 0),
 	Vector2i(7, 1),
 	Vector2i(6,2)
+]
+
+var water_tiles = [
+	
+	Vector2i(4,9),
+	Vector2i(4,10),
+	Vector2i(6,9),
+	Vector2i(6,10)
 ]
 
 func _physics_process(delta: float) -> void:
@@ -119,7 +127,12 @@ func handle_tile(atlas_coords): #kann aktionen anhand der ergebnisse von oben au
 		#print("Spieler steht auf Eis")
 		icemove = true
 
+	if atlas_coords in water_tiles:
+		print("Spieler in Wasser")
+		watermove = true
+
 	# Beispiel: Gras Tile
-	elif atlas_coords == Vector2i(0, 0):
+	else:
 		#print("Gras")
 		icemove = false
+		watermove =false
