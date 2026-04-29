@@ -4,6 +4,6 @@ extends Camera2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("zoom") and player.velocity.length() == 0:
-			zoom = Vector2(3,3)
+			zoom = Vector2(2,2)
 	else:
-		zoom = Vector2(4,4)
+		zoom = Vector2(3,3)

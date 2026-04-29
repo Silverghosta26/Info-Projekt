@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
+const jump_speed = 1.5
 
-const SPEED = 150.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 190.0 
+const JUMP_VELOCITY = -320.0 * jump_speed 
 
 # Beschleunigung & Reibung
-const ACCEL_NORMAL = 1000.0
+const ACCEL_NORMAL = 1000.0  
 const FRICTION_NORMAL = 1000.0
 
 const ACCEL_ICE = 400.0
@@ -13,6 +14,14 @@ const FRICTION_ICE = 50.0
 var watermove: bool = false
 var icemove: bool = false
 var speed_multiplier := 1.0
+
+const COYOTE_TIME := 0.05
+const JUMP_BUFFER_TIME := 0.03
+
+var coyote_timer := 0.0
+var jump_buffer_timer := 0.0
+
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var tilemap = get_tree().current_scene.find_child("tiles", true, false)
@@ -36,14 +45,27 @@ var water_tiles = [
 ]
 
 func _physics_process(delta: float) -> void:
-	check_tile_below()
+	# Update timer für Coyote Time
+	if is_on_floor():
+		coyote_timer = COYOTE_TIME
+	else:
+		coyote_timer = max(coyote_timer - delta, 0.0)
+
+	# Update Jump Buffer wenn Taste gedrückt
+	if Input.is_action_just_pressed("Jump"):
+		jump_buffer_timer = JUMP_BUFFER_TIME
+	else:
+		jump_buffer_timer = max(jump_buffer_timer - delta, 0.0)
+
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-		
-	# Handle jump.
-	if Input.is_action_pressed("Jump") and is_on_floor():
+		velocity += get_gravity() * delta * jump_speed 
+
+	# Handle jump: erlauben wenn entweder auf dem Boden ODER in Coyote Time, und ein Buffered Jump vorliegt
+	if jump_buffer_timer > 0.0 and (is_on_floor() or coyote_timer > 0.0):
 		velocity.y = JUMP_VELOCITY
+		jump_buffer_timer = 0.0
+		coyote_timer = 0.0
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
