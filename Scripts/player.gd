@@ -21,7 +21,9 @@ const JUMP_BUFFER_TIME := 0.03
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
 
+var was_on_ice := false
 
+var input_enabled = true
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var tilemap = get_tree().current_scene.find_child("tiles", true, false)
@@ -45,6 +47,10 @@ var water_tiles = [
 ]
 
 func _physics_process(delta: float) -> void:
+	
+	if not input_enabled:
+		return
+	
 	# Update timer für Coyote Time
 	if is_on_floor():
 		coyote_timer = COYOTE_TIME
@@ -66,6 +72,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0
+		
+		was_on_ice = icemove
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -99,8 +107,10 @@ func _physics_process(delta: float) -> void:
 	animated_sprite_2d.play(anim)
 
 	# Eis oder normale Werte
-	var accel = ACCEL_ICE if icemove else ACCEL_NORMAL
-	var friction = FRICTION_ICE if icemove else FRICTION_NORMAL
+	var use_ice_physics = icemove or (not is_on_floor() and was_on_ice)
+
+	var accel = ACCEL_ICE if use_ice_physics else ACCEL_NORMAL
+	var friction = FRICTION_ICE if use_ice_physics else FRICTION_NORMAL
 
 	# TARGET SPEED
 	var target_velocity_x = direction * SPEED * speed_multiplier
@@ -153,3 +163,8 @@ func handle_tile(atlas_coords): #kann aktionen anhand der ergebnisse von oben au
 		icemove = true
 	if atlas_coords in water_tiles:
 		watermove = true
+
+func disable_input_for(seconds: float) -> void:
+	input_enabled = false
+	await get_tree().create_timer(seconds).timeout
+	input_enabled = true

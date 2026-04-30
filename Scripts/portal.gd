@@ -1,6 +1,7 @@
 extends Area2D
 @onready var timer: Timer = $Timer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player: CharacterBody2D = get_tree().current_scene.find_child("Player", true, false)
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -15,7 +16,8 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if self.name == "enter":
 		var exitpoint = level[i]
-		await get_tree().create_timer(2.0).timeout
+		player.disable_input_for(1.0)
+		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file(exitpoint)
 	if self.name == "exit":
 		animated_sprite.play("close")
