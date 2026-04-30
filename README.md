@@ -20,7 +20,7 @@ Uploads/Changes:
 	24.04.2026
 		upload von Jonathan: neue Elemente hinzugefügt z.B Musik und test Level erstellt mit bewegenden Plattformen, Münzen und Tilesets: background + Blöcke
 	25.04.2026
-		uploads fabian unf jonathan: gemeinsame arebit am projekt in mehreren gebieten bei fabi
+		uploads fabian und jonathan: gemeinsame arebit am projekt in mehreren gebieten bei fabi
 	26.04.2026
 		upload fabian: hinzufügung "bosslevel" unvollständig/grob
 		upload jonathan: verschiedene veränderungen an scripten und einstellungen des projekts
@@ -31,4 +31,8 @@ Uploads/Changes:
 		upload jonathan & lorenz: zusammenarbeit am projekt, bearbeitung von skripten und erstellung neues level von lorenz
 		upload jonathan: slime realistische bewegung geadded mit sprite flip bei change und output für blockdetektor im charakter hinzugefügt, on ice verändert jetzt
 			bewegungsverhalten
-		upload jonathan: weitere änderungen: ducken macht player langsamer siehe multiplier player.gd, am eigenen/test level weitergearbeitet und ordnerstruktur verbessert
+		upload jonathan: weitere änderungen: ducken macht player langsamer siehe multiplier player.gd, am eigenen/test level
+				weitergearbeitet und ordnerstruktur verbessert
+	30.04.2026
+		upload jonathan und leo: changes von leo auf zusatzbranch mit main branch gemerged und integriert; habe gemacht das der sein
+			slide auf ice auch nach jump in der luft behält und portal macht player bewegungsunfähig
