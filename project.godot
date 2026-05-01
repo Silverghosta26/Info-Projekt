@@ -22,6 +22,10 @@ buses/default_bus_layout="uid://bw383ilnv5jpn"
 
 Music="*uid://cla83c7cmnsl6"
 
+[display]
+
+window/size/resizable=false
+
 [dotnet]
 
 project/assembly_name="Info-Projekt"
