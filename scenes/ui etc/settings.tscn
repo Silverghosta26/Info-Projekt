@@ -107,7 +107,11 @@ offset_bottom = 216.0
 theme_override_font_sizes/font_size = 55
 text = "Exit"
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Control/CenterContainer" unique_id=1978453853]
+ok_button_text = "Confirm"
+
 [connection signal="pressed" from="Control/zahnrad" to="Control" method="_on_zahnrad_pressed"]
 [connection signal="value_changed" from="Control/CenterContainer/Panel/VSlider" to="Control" method="_on_v_slider_value_changed"]
 [connection signal="pressed" from="Control/CenterContainer/Panel/Restart" to="Control" method="_on_restart_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/Panel/Exit" to="Control" method="_on_exit_pressed"]
+[connection signal="confirmed" from="Control/CenterContainer/ConfirmationDialog" to="Control" method="_on_confirmation_dialog_confirmed"]

@@ -1,14 +1,17 @@
 extends Control
 
+@onready var confdialog: ConfirmationDialog = $CenterContainer/ConfirmationDialog
+
 var menü_open = false
 
+var difdialog = 0
+
 func _ready():
-	print("geladen")
+	
 	$CenterContainer.visible = false
 	$ColorRect.visible = false
 
 func _on_zahnrad_pressed() -> void:
-	print("geklickt")
 	menü_open = !menü_open
 	
 	$CenterContainer.visible = menü_open
@@ -22,9 +25,18 @@ func _on_v_slider_value_changed(value):
 
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
-
+	confdialog.dialog_text = "Do you really want to close the game?"
+	confdialog.popup_centered()
+	difdialog = 1
 
 
 func _on_restart_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	confdialog.dialog_text = "Do you really want to reset all your progress?"
+	confdialog.popup_centered()
+	difdialog = 2
+
+func _on_confirmation_dialog_confirmed() -> void:
+	if difdialog == 1:
+		get_tree().quit()
+	elif difdialog == 2:
+		get_tree().change_scene_to_file("res://scenes/level/level1.tscn")
