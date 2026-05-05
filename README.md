@@ -36,3 +36,5 @@ Uploads/Changes:
 	30.04.2026
 		upload jonathan und leo: changes von leo auf zusatzbranch mit main branch gemerged und integriert; habe gemacht das der sein
 			slide auf ice auch nach jump in der luft behält und portal macht player bewegungsunfähig
+	05.05.2026
+		upload jonathan: settings ui geadded und startscreen, noch nicht komplett implementiert und dateisystem geändert für übersicht -> noch nicht fertig und könnte wegen dateisystem change für probleme in skripten sorgen, prüfen! portal skript bereits an änderungen angepasst
