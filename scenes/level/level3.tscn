@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://w8y7cvhq8ppg"]
 
 [ext_resource type="Texture2D" uid="uid://bk2am84rc8nkd" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_0mhq3"]
-[ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/player.tscn" id="2_cmda7"]
-[ext_resource type="PackedScene" uid="uid://f7lohvhcwm6x" path="res://scenes/portal.tscn" id="3_cmda7"]
-[ext_resource type="PackedScene" uid="uid://ck8prrxqugyme" path="res://scenes/coin.tscn" id="4_4we2l"]
+[ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/level elements/player.tscn" id="2_cmda7"]
+[ext_resource type="PackedScene" uid="uid://f7lohvhcwm6x" path="res://scenes/level elements/portal.tscn" id="3_cmda7"]
+[ext_resource type="PackedScene" uid="uid://ck8prrxqugyme" path="res://scenes/level elements/coin.tscn" id="4_4we2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mhq3"]
 texture = ExtResource("1_0mhq3")

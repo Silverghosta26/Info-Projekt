@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://cy6g5apcsptbm"]
 
-[ext_resource type="Texture2D" uid="uid://bk2am84rc8nkd" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_y8p1r"]
-[ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/player.tscn" id="2_q7rin"]
-[ext_resource type="Script" uid="uid://4rk8qhxykqpi" path="res://Scripts/camera_2d.gd" id="3_7j2uk"]
-[ext_resource type="PackedScene" uid="uid://des3ggi7l8h3n" path="res://scenes/sandplatform.tscn" id="4_sdpfo"]
+[ext_resource type="Texture2D" uid="uid://bk2am84rc8nkd" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_2dk42"]
+[ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/level elements/player.tscn" id="2_mpbyo"]
+[ext_resource type="Script" uid="uid://4rk8qhxykqpi" path="res://Scripts/camera_2d.gd" id="3_rsi2t"]
+[ext_resource type="PackedScene" uid="uid://des3ggi7l8h3n" path="res://scenes/level elements/sandplatform.tscn" id="4_8i0pl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f67e4"]
-texture = ExtResource("1_y8p1r")
+texture = ExtResource("1_2dk42")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -193,7 +193,7 @@ use_parent_material = true
 position = Vector2(31, 26)
 tile_set = SubResource("TileSet_64kkn")
 
-[node name="Player" parent="tilemaps" unique_id=1139590716 instance=ExtResource("2_q7rin")]
+[node name="Player" parent="tilemaps" unique_id=1139590716 instance=ExtResource("2_mpbyo")]
 process_priority = 5
 position = Vector2(89, 571)
 
@@ -202,19 +202,19 @@ position = Vector2(0, 3)
 zoom = Vector2(4, 4)
 limit_bottom = 800
 position_smoothing_enabled = true
-script = ExtResource("3_7j2uk")
+script = ExtResource("3_rsi2t")
 
-[node name="sandplatform" parent="tilemaps" unique_id=580491365 instance=ExtResource("4_sdpfo")]
+[node name="sandplatform" parent="tilemaps" unique_id=580491365 instance=ExtResource("4_8i0pl")]
 position = Vector2(95, 372)
 
-[node name="sandplatform2" parent="tilemaps" unique_id=1465800259 instance=ExtResource("4_sdpfo")]
+[node name="sandplatform2" parent="tilemaps" unique_id=1465800259 instance=ExtResource("4_8i0pl")]
 position = Vector2(95, 484)
 
-[node name="sandplatform3" parent="tilemaps" unique_id=837205451 instance=ExtResource("4_sdpfo")]
+[node name="sandplatform3" parent="tilemaps" unique_id=837205451 instance=ExtResource("4_8i0pl")]
 position = Vector2(95, 422)
 
-[node name="sandplatform4" parent="tilemaps" unique_id=1964305105 instance=ExtResource("4_sdpfo")]
+[node name="sandplatform4" parent="tilemaps" unique_id=1964305105 instance=ExtResource("4_8i0pl")]
 position = Vector2(96, 286)
 
-[node name="sandplatform5" parent="tilemaps" unique_id=2114251979 instance=ExtResource("4_sdpfo")]
+[node name="sandplatform5" parent="tilemaps" unique_id=2114251979 instance=ExtResource("4_8i0pl")]
 position = Vector2(96, 227)

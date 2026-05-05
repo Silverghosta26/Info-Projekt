@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://bmms80aspfbw0"]
 
 [ext_resource type="Texture2D" uid="uid://bk2am84rc8nkd" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_tmfup"]
-[ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/player.tscn" id="2_7e0aa"]
+[ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/level elements/player.tscn" id="2_7e0aa"]
 [ext_resource type="Script" uid="uid://4rk8qhxykqpi" path="res://Scripts/camera_2d.gd" id="3_rtttf"]
-[ext_resource type="PackedScene" uid="uid://ck8prrxqugyme" path="res://scenes/coin.tscn" id="4_j58t6"]
-[ext_resource type="PackedScene" uid="uid://f7lohvhcwm6x" path="res://scenes/portal.tscn" id="6_tmfup"]
-[ext_resource type="PackedScene" uid="uid://c2lrr205xxw2b" path="res://scenes/killzone.tscn" id="7_dees2"]
+[ext_resource type="PackedScene" uid="uid://ck8prrxqugyme" path="res://scenes/level elements/coin.tscn" id="4_j58t6"]
+[ext_resource type="PackedScene" uid="uid://f7lohvhcwm6x" path="res://scenes/level elements/portal.tscn" id="6_tmfup"]
+[ext_resource type="PackedScene" uid="uid://c2lrr205xxw2b" path="res://scenes/level elements/killzone.tscn" id="7_dees2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_tmfup")

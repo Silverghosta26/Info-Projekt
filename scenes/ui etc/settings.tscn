@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://nfc5oyytmleo"]
 
-[ext_resource type="Texture2D" uid="uid://1cq3h3i2udmu" path="res://assets/ui elements/settings.png" id="1_5p8wc"]
-[ext_resource type="Script" uid="uid://nteu5j65xu8p" path="res://Scripts/settings.gd" id="1_r6d6q"]
+[ext_resource type="Script" uid="uid://nteu5j65xu8p" path="res://Scripts/settings.gd" id="1_g256d"]
+[ext_resource type="Texture2D" uid="uid://1cq3h3i2udmu" path="res://assets/ui elements/settings.png" id="2_ycye1"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=238984553]
 process_mode = 2
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_r6d6q")
+script = ExtResource("1_g256d")
 
 [node name="zahnrad" type="Button" parent="Control" unique_id=369313600]
 process_mode = 3
@@ -21,7 +21,8 @@ z_index = 5
 layout_mode = 0
 offset_right = 61.0
 offset_bottom = 65.0
-icon = ExtResource("1_5p8wc")
+focus_mode = 0
+icon = ExtResource("2_ycye1")
 expand_icon = true
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=316370189]

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bi6klmvw7mx61"]
 
-[ext_resource type="Script" uid="uid://bsx34nfsi460f" path="res://Scripts/runtime.gd" id="1_u3pyt"]
+[ext_resource type="Script" uid="uid://bsx34nfsi460f" path="res://Scripts/runtime.gd" id="1_d4mx0"]
 
 [node name="runtime" type="Label" unique_id=1286068585]
 offset_right = 40.0
 offset_bottom = 23.0
-script = ExtResource("1_u3pyt")
+script = ExtResource("1_d4mx0")
 
 [node name="Timer" type="Timer" parent="." unique_id=1615644988]
 autostart = true
