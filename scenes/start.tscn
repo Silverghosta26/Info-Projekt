@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ken402cv4jq1"]
+
+[ext_resource type="Script" uid="uid://dnchmc45ocbrg" path="res://Scripts/start.gd" id="1_jaeev"]
+
+[node name="Control" type="Control" unique_id=1071276803]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jaeev")
+
+[node name="Label" type="Label" parent="." unique_id=127957755]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -77.0
+offset_right = 73.0
+offset_bottom = -54.0
+text = "Jump and Run"
+
+[node name="Button" type="Button" parent="." unique_id=1829575014]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 52.0
+offset_right = 23.0
+offset_bottom = 83.0
+action_mode = 0
+text = "PLay"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

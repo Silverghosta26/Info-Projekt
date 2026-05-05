@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://f7lohvhcwm6x" path="res://scenes/portal.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://c2lrr205xxw2b" path="res://scenes/killzone.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://bxha3581rku7a" path="res://scenes/grassplatform.tscn" id="9_0tnpc"]
-[ext_resource type="Texture2D" uid="uid://bp8j5stinv644" path="res://assets/grasslands/Assets/Background_2.png" id="9_vtaks"]
-[ext_resource type="Texture2D" uid="uid://dysidmp6agj43" path="res://assets/grasslands/Assets/Background_1.png" id="10_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://bp8j5stinv644" path="res://grasslands/Assets/Background_2.png" id="9_vtaks"]
+[ext_resource type="Texture2D" uid="uid://dysidmp6agj43" path="res://grasslands/Assets/Background_1.png" id="10_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("2_yqjtg")

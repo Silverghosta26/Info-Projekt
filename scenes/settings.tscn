@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://nfc5oyytmleo"]
+
+[ext_resource type="Texture2D" uid="uid://1cq3h3i2udmu" path="res://assets/ui elements/settings.png" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://nteu5j65xu8p" path="res://Scripts/settings.gd" id="1_r6d6q"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=238984553]
+process_mode = 2
+
+[node name="Control" type="Control" parent="." unique_id=1982041097]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r6d6q")
+
+[node name="zahnrad" type="Button" parent="Control" unique_id=369313600]
+process_mode = 3
+z_index = 5
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 65.0
+icon = ExtResource("1_5p8wc")
+expand_icon = true
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=316370189]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 154.0
+offset_top = 78.0
+offset_right = -146.44452
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23137255, 0.23137255, 0.23137255, 0.54901963)
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1149938304]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control/CenterContainer" unique_id=1871040583]
+layout_mode = 2
+
+[node name="Settings" type="Label" parent="Control/CenterContainer/Panel" unique_id=620467848]
+layout_mode = 0
+offset_left = -421.0
+offset_top = -246.0
+offset_right = 428.0
+offset_bottom = -156.0
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.18039216, 0.18039216, 0.7764706)
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music" type="Label" parent="Control/CenterContainer/Panel" unique_id=1563126104]
+layout_mode = 0
+offset_left = -353.0
+offset_top = -77.0
+offset_right = -209.0
+offset_bottom = 13.0
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.18039216, 0.18039216, 0.7764706)
+theme_override_font_sizes/font_size = 50
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSlider" type="VSlider" parent="Control/CenterContainer/Panel" unique_id=1510566174]
+layout_mode = 0
+offset_left = -228.0
+offset_top = -112.0
+offset_right = -41.0
+offset_bottom = 64.0
+step = 10.0
+tick_count = 11
+ticks_on_borders = true
+
+[node name="Restart" type="Button" parent="Control/CenterContainer/Panel" unique_id=1680933344]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 125.0
+offset_right = 412.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 55
+text = "Restart"
+
+[node name="Exit" type="Button" parent="Control/CenterContainer/Panel" unique_id=948451695]
+layout_mode = 0
+offset_left = -404.0
+offset_top = 126.0
+offset_right = -4.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 55
+text = "Exit"
+
+[connection signal="pressed" from="Control/zahnrad" to="Control" method="_on_zahnrad_pressed"]
+[connection signal="value_changed" from="Control/CenterContainer/Panel/VSlider" to="Control" method="_on_v_slider_value_changed"]
+[connection signal="pressed" from="Control/CenterContainer/Panel/Restart" to="Control" method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/Panel/Exit" to="Control" method="_on_exit_pressed"]
