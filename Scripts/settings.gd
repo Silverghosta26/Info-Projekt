@@ -1,13 +1,14 @@
 extends Control
 
 @onready var confdialog: ConfirmationDialog = $CenterContainer/ConfirmationDialog
+@onready var vslider: VSlider = $CenterContainer/Panel/VSlider
 
 var menü_open = false
 
 var difdialog = 0
 
 func _ready():
-	
+	vslider.value = 100
 	$CenterContainer.visible = false
 	$ColorRect.visible = false
 

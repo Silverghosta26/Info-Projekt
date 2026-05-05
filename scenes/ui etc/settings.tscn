@@ -36,6 +36,7 @@ offset_right = -146.44452
 offset_bottom = -91.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.23137255, 0.23137255, 0.23137255, 0.54901963)
 
 [node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1149938304]
@@ -86,6 +87,7 @@ offset_top = -112.0
 offset_right = -41.0
 offset_bottom = 64.0
 step = 10.0
+value = 100.0
 tick_count = 11
 ticks_on_borders = true
 
