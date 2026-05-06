@@ -40,3 +40,6 @@ Uploads/Changes:
 		upload jonathan: settings ui geadded und startscreen, noch nicht komplett implementiert und dateisystem geändert für übersicht -> noch nicht fertig und könnte wegen
 			dateisystem change für probleme in skripten sorgen, prüfen! portal skript bereits an änderungen angepasst
 			confirmdialog für exit und reset geadded
+	06.05.2026
+		upload jonathan: start screen repariert, knopf geht jetzt und ist main scene, fixed lorenzlv/level3 camera: script was not attached
+			das watermovement hinzugefügt für player und anschließend mit ki das skript neu strukturiert
