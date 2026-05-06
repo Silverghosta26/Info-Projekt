@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ckadhb15kijnc"]
 
-[ext_resource type="Texture2D" uid="uid://bp8j5stinv644" path="res://grasslands/Assets/Background_2.png" id="1_q1drb"]
-[ext_resource type="Texture2D" uid="uid://dysidmp6agj43" path="res://grasslands/Assets/Background_1.png" id="2_oe6cc"]
+[ext_resource type="Texture2D" uid="uid://bp8j5stinv644" path="res://assets/grasslands/Assets/Background_2.png" id="1_q1drb"]
+[ext_resource type="Texture2D" uid="uid://dysidmp6agj43" path="res://assets/grasslands/Assets/Background_1.png" id="2_oe6cc"]
 [ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/level elements/player.tscn" id="3_m2gd4"]
 [ext_resource type="Script" uid="uid://4rk8qhxykqpi" path="res://Scripts/camera_2d.gd" id="4_jawes"]
 [ext_resource type="Texture2D" uid="uid://bk2am84rc8nkd" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="5_tlhdo"]

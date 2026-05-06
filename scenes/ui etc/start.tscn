@@ -1,48 +1,48 @@
 [gd_scene format=3 uid="uid://b5s4l4sal4uo1"]
 
-[sub_resource type="GDScript" id="GDScript_54cqy"]
-script/source = "extends Control
+[ext_resource type="Script" uid="uid://cewsooeatk5nx" path="res://Scripts/start.gd" id="1_7uig3"]
+[ext_resource type="Texture2D" uid="uid://dgajnu4bhq6sv" path="res://assets/ui elements/button UI.png" id="1_xj3ri"]
 
-func _on_button_pressed() -> void:
-	print(\"pressed\")
-	get_tree().change_scene_to_file(\"res://scenes/game.tscn\")
-"
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uig3"]
+atlas = ExtResource("1_xj3ri")
+region = Rect2(17, 145, 14, 14)
 
-[node name="Control" type="Control" unique_id=1071276803]
+[node name="Control" type="Control" unique_id=442762802]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-script = SubResource("GDScript_54cqy")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=927346554]
-layout_mode = 0
-offset_left = -584.0
-offset_top = -332.0
-offset_right = 584.0
-offset_bottom = 332.0
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 2
-color = Color(0.24940214, 0.52144027, 0.48491484, 1)
+mouse_behavior_recursive = 1
+script = ExtResource("1_7uig3")
 
-[node name="Label" type="Label" parent="." unique_id=468691676]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1149697409]
 layout_mode = 0
-offset_left = -239.0
-offset_top = -214.0
-offset_right = 236.0
-offset_bottom = -118.0
-theme_override_font_sizes/font_size = 70
+offset_right = 1156.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0.14302474, 0.33593115, 0.3653229, 1)
+
+[node name="Name" type="Label" parent="." unique_id=1748191610]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 53.0
+offset_right = 1129.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 150
 text = "Jump and Run"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=1493797912]
 layout_mode = 0
-offset_left = -50.0
-offset_top = 118.0
-offset_right = 41.0
-offset_bottom = 149.0
-text = "heloooooo"
+offset_left = 474.0
+offset_top = 327.0
+offset_right = 676.0
+offset_bottom = 536.0465
+mouse_behavior_recursive = 2
+icon = SubResource("AtlasTexture_7uig3")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

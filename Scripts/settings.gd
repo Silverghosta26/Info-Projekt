@@ -14,7 +14,9 @@ func _ready():
 
 func _on_zahnrad_pressed() -> void:
 	menü_open = !menü_open
+	update()
 	
+func update():
 	$CenterContainer.visible = menü_open
 	$ColorRect.visible = menü_open
 	
@@ -40,4 +42,7 @@ func _on_confirmation_dialog_confirmed() -> void:
 	if difdialog == 1:
 		get_tree().quit()
 	elif difdialog == 2:
-		get_tree().change_scene_to_file("res://scenes/level/level1.tscn")
+		get_tree().change_scene_to_file("res://scenes/ui etc/start.tscn")
+		menü_open = false
+		update()
+		

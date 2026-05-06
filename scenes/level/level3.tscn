@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bk2am84rc8nkd" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_0mhq3"]
 [ext_resource type="PackedScene" uid="uid://byi2ng2e7di7n" path="res://scenes/level elements/player.tscn" id="2_cmda7"]
 [ext_resource type="PackedScene" uid="uid://f7lohvhcwm6x" path="res://scenes/level elements/portal.tscn" id="3_cmda7"]
+[ext_resource type="Script" uid="uid://4rk8qhxykqpi" path="res://Scripts/camera_2d.gd" id="3_w4sk7"]
 [ext_resource type="PackedScene" uid="uid://ck8prrxqugyme" path="res://scenes/level elements/coin.tscn" id="4_4we2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mhq3"]
@@ -445,6 +446,7 @@ position = Vector2(405, 211)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=52477711]
 position = Vector2(0, 5)
 zoom = Vector2(4, 4)
+script = ExtResource("3_w4sk7")
 
 [node name="portal" parent="." unique_id=1044100374 instance=ExtResource("3_cmda7")]
 position = Vector2(1478, 197)

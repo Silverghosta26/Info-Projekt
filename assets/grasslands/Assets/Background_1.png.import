@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyajrvyqdfwpc"
-path="res://.godot/imported/trees.png-2bea08710af18099a0a90eb61f29277e.ctex"
+uid="uid://dysidmp6agj43"
+path="res://.godot/imported/Background_1.png-686babf9248c3a524c17f9918c1df723.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grasslands/Social/trees.png"
-dest_files=["res://.godot/imported/trees.png-2bea08710af18099a0a90eb61f29277e.ctex"]
+source_file="res://assets/grasslands/Assets/Background_1.png"
+dest_files=["res://.godot/imported/Background_1.png-686babf9248c3a524c17f9918c1df723.ctex"]
 
 [params]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Info-Projekt"
-run/main_scene="uid://ckadhb15kijnc"
+run/main_scene="uid://b5s4l4sal4uo1"
 config/features=PackedStringArray("4.6", "Mobile")
 
 [audio]

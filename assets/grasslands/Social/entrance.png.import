@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dysidmp6agj43"
-path="res://.godot/imported/Background_1.png-a8e2b243467c93fcb7d3d134d0b19628.ctex"
+uid="uid://cij183a8u21yd"
+path="res://.godot/imported/entrance.png-447e2d668ff4a7677163d62b9e229be5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grasslands/Assets/Background_1.png"
-dest_files=["res://.godot/imported/Background_1.png-a8e2b243467c93fcb7d3d134d0b19628.ctex"]
+source_file="res://assets/grasslands/Social/entrance.png"
+dest_files=["res://.godot/imported/entrance.png-447e2d668ff4a7677163d62b9e229be5.ctex"]
 
 [params]
 

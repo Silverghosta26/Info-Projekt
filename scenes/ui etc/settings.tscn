@@ -13,6 +13,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 script = ExtResource("1_g256d")
 
 [node name="zahnrad" type="Button" parent="Control" unique_id=369313600]
@@ -22,6 +24,7 @@ layout_mode = 0
 offset_right = 61.0
 offset_bottom = 65.0
 focus_mode = 0
+mouse_behavior_recursive = 2
 icon = ExtResource("2_ycye1")
 expand_icon = true
 
@@ -52,9 +55,11 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Control/CenterContainer" unique_id=1871040583]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Settings" type="Label" parent="Control/CenterContainer/Panel" unique_id=620467848]
 layout_mode = 0
@@ -86,6 +91,7 @@ offset_left = -228.0
 offset_top = -112.0
 offset_right = -41.0
 offset_bottom = 64.0
+mouse_behavior_recursive = 2
 step = 10.0
 value = 100.0
 tick_count = 11
@@ -97,6 +103,7 @@ offset_left = 12.0
 offset_top = 125.0
 offset_right = 412.0
 offset_bottom = 215.0
+mouse_behavior_recursive = 2
 theme_override_font_sizes/font_size = 55
 text = "Restart"
 
@@ -106,6 +113,7 @@ offset_left = -404.0
 offset_top = 126.0
 offset_right = -4.0
 offset_bottom = 216.0
+mouse_behavior_recursive = 2
 theme_override_font_sizes/font_size = 55
 text = "Exit"
 
