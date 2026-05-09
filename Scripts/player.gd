@@ -193,27 +193,27 @@ func handle_movement(delta, input_dir):
 func update_tile_state():
 	icemove = false
 	watermove = false
-	# Falls du im Wasser "schwebst", brauchen wir die manuelle Punkt-Prüfung weiterhin:
+	
 	check_tiles_at_position(global_position + Vector2(0, 10)) 
 
-	# Prüfe alle Kollisionen des letzten Frames (Wände, Decken, Boden)
+	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
-		if collider is TileMapLayer: # Falls du TileMapLayer nutzt (Godot 4.2+)
+		if collider is TileMapLayer:
 			var tile_pos = collider.local_to_map(collider.to_local(collision.get_position() - collision.get_normal() * 2))
 			var atlas = collider.get_cell_atlas_coords(tile_pos)
 			handle_tile(atlas)
-		elif collider is TileMap: # Für ältere Godot 4 Versionen
-			# Da du ein Array 'tilemaps' hast, iterieren wir hier:
+		elif collider is TileMap: 
+			
 			for tm in tilemaps:
 				if collider == tm:
 					var tile_pos = tm.local_to_map(tm.to_local(collision.get_position() - collision.get_normal() * 2))
 					var atlas = tm.get_cell_atlas_coords(tile_pos)
 					handle_tile(atlas)
 
-# Hilfsfunktion für Wasser/Eis-Check (da man dort nicht immer kollidiert)
+
 func check_tiles_at_position(pos):
 	for tm in tilemaps:
 		if tm == null: continue
@@ -222,35 +222,9 @@ func check_tiles_at_position(pos):
 		if atlas != Vector2i(-1, -1):
 			handle_tile(atlas)
 
-# Hilfsfunktion für Wasser/Eis-Check (da man dort nicht immer kollidiert)
-#func check_tiles_at_position(pos):
-	for tm in tilemaps:
-		if tm == null: continue
-		var cell = tm.local_to_map(tm.to_local(pos))
-		var atlas = tm.get_cell_atlas_coords(cell)
-		if atlas != Vector2i(-1, -1):
-			handle_tile(atlas)
-	#for tilemap in tilemaps:
-		#check_tilemap(tilemap, left, right)
 
 
-func check_tilemap(tilemap, left_pos, right_pos):
-	if tilemap == null:
-		return
 
-	var cell_left = tilemap.local_to_map(tilemap.to_local(left_pos))
-	var cell_right = tilemap.local_to_map(tilemap.to_local(right_pos))
-
-	var tile_left = tilemap.get_cell_source_id(cell_left)
-	var tile_right = tilemap.get_cell_source_id(cell_right)
-
-	if tile_left != -1:
-		var atlas = tilemap.get_cell_atlas_coords(cell_left)
-		handle_tile(atlas)
-
-	if tile_right != -1:
-		var atlas = tilemap.get_cell_atlas_coords(cell_right)
-		handle_tile(atlas)
 
 
 func handle_tile(atlas_coords):

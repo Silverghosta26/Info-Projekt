@@ -448,8 +448,11 @@ position = Vector2(0, 5)
 zoom = Vector2(4, 4)
 script = ExtResource("3_w4sk7")
 
-[node name="portal" parent="." unique_id=1044100374 instance=ExtResource("3_cmda7")]
-position = Vector2(1478, 197)
-
 [node name="coin" parent="." unique_id=719686075 instance=ExtResource("4_4we2l")]
 position = Vector2(824, 72)
+
+[node name="exit" parent="." unique_id=1044100374 instance=ExtResource("3_cmda7")]
+position = Vector2(314, 196)
+
+[node name="enter" parent="." unique_id=1896896224 instance=ExtResource("3_cmda7")]
+position = Vector2(1478, 200)
