@@ -205,13 +205,10 @@ func update_tile_state():
 			var tile_pos = collider.local_to_map(collider.to_local(collision.get_position() - collision.get_normal() * 2))
 			var atlas = collider.get_cell_atlas_coords(tile_pos)
 			handle_tile(atlas)
-		elif collider is TileMap: 
+		
+		
 			
-			for tm in tilemaps:
-				if collider == tm:
-					var tile_pos = tm.local_to_map(tm.to_local(collision.get_position() - collision.get_normal() * 2))
-					var atlas = tm.get_cell_atlas_coords(tile_pos)
-					handle_tile(atlas)
+		
 
 
 func check_tiles_at_position(pos):
