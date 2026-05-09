@@ -213,7 +213,7 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Player" parent="." unique_id=1139590716 instance=ExtResource("2_pjvq8")]
 process_priority = 5
-position = Vector2(-1073, -130)
+position = Vector2(-870, 388)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1583720375]
 position = Vector2(54, -26)
@@ -231,7 +231,7 @@ position = Vector2(424, 582)
 shape = SubResource("WorldBoundaryShape2D_j7e35")
 
 [node name="exit" parent="." unique_id=1044100374 instance=ExtResource("6_ta61x")]
-position = Vector2(-889, 371)
+position = Vector2(-872, 368)
 
 [node name="enter" parent="." unique_id=1287096067 instance=ExtResource("6_ta61x")]
 position = Vector2(-665, -734)
