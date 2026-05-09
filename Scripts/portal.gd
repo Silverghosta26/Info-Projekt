@@ -8,7 +8,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if not body.name == "Player": 
 		return
 	
-	const level = ["res://scenes/level/level1.tscn","res://scenes/level/level2.tscn","res://scenes/level/level3.tscn"]
+	const level = ["res://scenes/level/level1.tscn","res://scenes/level/level2.tscn","res://scenes/level/level3.tscn","res://scenes/level/level4.tscn"]
 	
 	var current_path = get_tree().current_scene.scene_file_path
 	var i = level.find(current_path) +1
