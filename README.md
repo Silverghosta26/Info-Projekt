@@ -1,10 +1,10 @@
-DoKumentation Informatik Grupenarbeit
+Dokumentation Informatik Grupenarbeit
 
 Ziel: Jump and Run game, programmiert mit Godot engine
 
 Lorenz: gröstenteils programmieren
 Fabian: größtenteils Grafiken 
-Leo: größtenteils Programmieren
+Leo: größtenteils Programmieren, Level Design aber auch Grafiken
 Jonathan: größtenteils Programmieren aber auch Grafiken
 
 Nicht beschränkt auf die genannten Themengebiete, jeder arbeitet überall ein wenig mit und hilft
