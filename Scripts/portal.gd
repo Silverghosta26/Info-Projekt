@@ -3,12 +3,11 @@ extends Area2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = get_tree().current_scene.find_child("Player", true, false)
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if not body.name == "Player": 
 		return
 	
-	const level = ["res://scenes/level/level1.tscn","res://scenes/level/level2.tscn","res://scenes/level/level3.tscn","res://scenes/level/level4.tscn"]
+	const level = ["res://scenes/level/level1.tscn","res://scenes/level/level2.tscn","res://scenes/level/level3.tscn","res://scenes/level/level4.tscn","res://scenes/level/bosslv_mit_stuhl.tscn"]
 	
 	var current_path = get_tree().current_scene.scene_file_path
 	var i = level.find(current_path) +1
