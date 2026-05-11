@@ -94,7 +94,7 @@ func update_timers(delta):
 	else:
 		coyote_timer = max(coyote_timer - delta, 0.0)
 
-	if Input.is_action_just_pressed("Jump"):
+	if Input.is_action_pressed("Jump"):
 		jump_buffer_timer = JUMP_BUFFER_TIME
 	else:
 		jump_buffer_timer = max(jump_buffer_timer - delta, 0.0)
