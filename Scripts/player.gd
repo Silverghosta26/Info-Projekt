@@ -31,6 +31,9 @@ var jump_buffer_timer := 0.0
 
 var was_on_ice := false
 var was_in_water := false
+var air_1 = false
+var swap_timer := 0.0
+const SWAP_TIMER = 0.5
 
 var input_enabled = true
 
@@ -64,7 +67,12 @@ var spike_tiles = [
 var slime_tiles = [
 	Vector2i(12, 0)
 ]
-
+var air_1_tiles = [
+	Vector2i(12, 4)
+]
+var tj = [
+	Vector2i(13, 0)
+]
 func _physics_process(delta: float) -> void:
 	
 	if not input_enabled:
@@ -93,6 +101,10 @@ func update_timers(delta):
 		coyote_timer = COYOTE_TIME
 	else:
 		coyote_timer = max(coyote_timer - delta, 0.0)
+	if not air_1:
+		swap_timer = SWAP_TIMER
+	else:
+		swap_timer = max(swap_timer - delta, 0.0)
 
 	if Input.is_action_pressed("Jump"):
 		jump_buffer_timer = JUMP_BUFFER_TIME
@@ -107,7 +119,9 @@ func apply_gravity(delta):
 	if watermove:
 		velocity.y += WATER_GRAVITY * delta
 	elif not is_on_floor():
-		velocity += get_gravity() * delta * jump_speed
+		if air_1 and swap_timer> 0.0:
+			velocity -= get_gravity() * delta * jump_speed*0.5
+		else:velocity += get_gravity() * delta * jump_speed
 
 
 # ----------------------------
@@ -201,10 +215,10 @@ func update_tile_state():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
-		if collider is TileMapLayer:
-			var tile_pos = collider.local_to_map(collider.to_local(collision.get_position() - collision.get_normal() * 2))
-			var atlas = collider.get_cell_atlas_coords(tile_pos)
-			handle_tile(atlas)
+		
+		var tile_pos = collider.local_to_map(collider.to_local(collision.get_position() - collision.get_normal() * 2))
+		var atlas = collider.get_cell_atlas_coords(tile_pos)
+		handle_tile(atlas)
 		
 		
 			
@@ -231,6 +245,12 @@ func handle_tile(atlas_coords):
 		watermove = true
 	if atlas_coords in spike_tiles:
 		get_tree().call_deferred("reload_current_scene")
+	if atlas_coords in air_1_tiles:
+		air_1 = true
+	else: air_1= false
+	if atlas_coords in tj:
+		velocity.y = -velocity.y 
+		
 	
 
 

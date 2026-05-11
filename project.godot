@@ -34,7 +34,8 @@ project/assembly_name="Info-Projekt"
 [importer_defaults]
 
 animation_library={
-&"animation/fps": 60.0
+&"animation/fps": 120.0,
+&"nodes/root_scale": 4.0
 }
 
 [input]
