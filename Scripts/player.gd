@@ -73,6 +73,12 @@ var air_1_tiles = [
 var tj = [
 	Vector2i(13, 0)
 ]
+
+func _ready() -> void:
+	var exit_tp = get_tree().current_scene.find_child("exit", true, false)
+
+	if exit_tp:
+		global_position = exit_tp.global_position
 func _physics_process(delta: float) -> void:
 	
 	if not input_enabled:
@@ -83,15 +89,14 @@ func _physics_process(delta: float) -> void:
 	handle_jump()
 
 	var input_dir = get_input()
-
+	
 	handle_animation(input_dir.x)
 	handle_movement(delta, input_dir)
-
-	move_and_slide()
 
 	update_tile_state()
 	handle_water_exit()
 
+	move_and_slide()
 
 # ----------------------------
 # TIMER
@@ -249,7 +254,7 @@ func handle_tile(atlas_coords):
 		air_1 = true
 	else: air_1= false
 	if atlas_coords in tj:
-		velocity.y = -velocity.y 
+		velocity.y =-velocity.y * 0.95	
 		
 	
 
