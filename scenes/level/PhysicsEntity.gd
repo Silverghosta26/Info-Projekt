@@ -17,6 +17,7 @@ const COYOTE_TIME := 0.1
 const JUMP_BUFFER_TIME := 0.03
 const SWAP_TIMER = 0.5
 
+
 # Zustandsvariablen
 var watermove: bool = false
 var icemove: bool = false
@@ -27,8 +28,8 @@ var was_on_ice := false
 var was_in_water := false
 var air_1 = false
 var swap_timer := 0.0
-
-
+var is_alive = true
+@export var stompable = true
 # Tile Definitionen 
 var ice_tiles = [
 	Vector2i(6, 0),
@@ -132,7 +133,7 @@ func handle_tile(atlas_coords):
 	if atlas_coords in water_tiles: watermove = true
 	if atlas_coords in air_1_tiles: air_1 = true
 	else: air_1 = false
-	if atlas_coords in spike_tiles: get_tree().call_deferred("reload_current_scene")
+	if atlas_coords in spike_tiles: self.die()
 	if atlas_coords in tj: velocity.y = -velocity.y
 
 func handle_water_exit():
@@ -143,10 +144,13 @@ func check_enemy_stomp():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
-		if collider is PhysicsEntity and collider != self:
+		if collider is PhysicsEntity and collider != self and collider.stompable == true:
 			if collision.get_normal().dot(Vector2.UP) > 0.5:
 				if collider.has_method("die"):
 					collider.die()
 				velocity.y = JUMP_VELOCITY * 0.8 
 				return true
 	return false
+func die():
+	is_alive = false
+	queue_free()

@@ -3,6 +3,18 @@
 [ext_resource type="Script" uid="uid://cuo0opulsijh5" path="res://Scripts/greenslime.gd" id="1_64pfu"]
 [ext_resource type="Texture2D" uid="uid://invupavdyuu7" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_r8u5p"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w716j"]
+atlas = ExtResource("1_r8u5p")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl6ul"]
+atlas = ExtResource("1_r8u5p")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orho2"]
+atlas = ExtResource("1_r8u5p")
+region = Rect2(0, 0, 24, 24)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_64pfu"]
 atlas = ExtResource("1_r8u5p")
 region = Rect2(0, 24, 24, 24)
@@ -85,6 +97,20 @@ region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hcvcn"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w716j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl6ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orho2")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_64pfu")
@@ -170,10 +196,8 @@ script = ExtResource("1_64pfu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=656648034]
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_hcvcn")
-animation = &"idle"
+animation = &"die"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1443671430]
 shape = SubResource("RectangleShape2D_k7hur")
