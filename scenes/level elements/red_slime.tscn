@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://invupavdyuu7" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_cgeqt"]
 [ext_resource type="Texture2D" uid="uid://byo2lnfpvcucw" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="2_p53n3"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgeqt"]
+atlas = ExtResource("2_p53n3")
+region = Rect2(72, 0, 24, 24)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rt5d"]
 atlas = ExtResource("2_p53n3")
 region = Rect2(48, 48, 24, 24)
@@ -99,6 +103,9 @@ region = Rect2(72, 0, 24, 24)
 [sub_resource type="SpriteFrames" id="SpriteFrames_hcvcn"]
 animations = [{
 "frames": [{
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_cgeqt")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4rt5d")
 }, {
