@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byi2ng2e7di7n"]
 
 [ext_resource type="Texture2D" uid="uid://dlj800qnewf45" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://davokuxhviw17" path="res://Scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://davokuxhviw17" path="res://Scripts/Phsiks based/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qxwu"]
 atlas = ExtResource("1_3vyb7")
@@ -110,10 +110,10 @@ region = Rect2(224, 96, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_0qxwu")
 }, {
-"duration": 0.5,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_wou5g")
 }, {
 "duration": 0.4,

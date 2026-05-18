@@ -188,7 +188,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7hur"]
-size = Vector2(16, 15)
+size = Vector2(16, 13)
 
 [node name="greenslime" type="CharacterBody2D" unique_id=571210871]
 script = ExtResource("1_64pfu")
@@ -200,6 +200,7 @@ animation = &"die"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1443671430]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k7hur")
 
 [node name="rayright" type="RayCast2D" parent="." unique_id=193629652]

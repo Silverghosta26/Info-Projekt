@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dd71kwjnfe2lg"]
 
-[ext_resource type="Script" uid="uid://ddogmsq7cq1m4" path="res://Scripts/red_slime.gd" id="1_yxirg"]
+[ext_resource type="Script" uid="uid://ddogmsq7cq1m4" path="res://Scripts/Phsiks based/red_slime.gd" id="1_yxirg"]
 [ext_resource type="Texture2D" uid="uid://invupavdyuu7" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_cgeqt"]
 [ext_resource type="Texture2D" uid="uid://byo2lnfpvcucw" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="2_p53n3"]
 
@@ -196,7 +196,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7hur"]
-size = Vector2(16, 15)
+size = Vector2(14, 13)
 
 [node name="greenslime" type="CharacterBody2D" unique_id=571210871]
 script = ExtResource("1_yxirg")
@@ -208,6 +208,7 @@ animation = &"die"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1443671430]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k7hur")
 
 [node name="rayright" type="RayCast2D" parent="." unique_id=193629652]
