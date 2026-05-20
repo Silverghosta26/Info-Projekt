@@ -10,6 +10,10 @@ var direction = 1
 func _init() -> void:
 	stompable = true 
 
+
+
+
+
 func _physics_process(delta: float) -> void:
 	if is_alive:
 		if rayright.is_colliding():

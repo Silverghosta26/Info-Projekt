@@ -3,6 +3,40 @@ extends PhysicsEntity
 var input_enabled = true
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurtbox: CollisionShape2D = $hurtbox
+
+#func _ready() -> void:
+#var exit_tp = get_tree().current_scene.find_child("exit", true, false)
+#
+#if exit_tp:
+#	global_position = exit_tp.global_position
+		
+		
+func check_enemy_collisions():
+
+	for i in range(get_slide_collision_count()):
+
+		var col = get_slide_collision(i)
+		var collider = col.get_collider()
+
+		if collider == null:
+			continue
+
+		if collider.is_in_group("enemies"):
+
+			var normal = col.get_normal()
+
+			# von oben
+			if normal.y < -0.5:
+
+				velocity.y = -(velocity.y + 150)
+
+				collider.queue_free()
+
+			# seitlich
+			else:
+				die()
+
+
 func _physics_process(delta: float) -> void:
 	if is_alive:
 		if not input_enabled: return
