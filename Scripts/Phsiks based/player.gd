@@ -64,7 +64,12 @@ func handle_animation(direction_x):
 		animated_sprite.flip_h = direction_x < 0
 	
 	var anim = "idle"
-	if not is_on_floor(): anim = "jump"
+	if not is_on_floor(): 
+		if self.velocity.y > 0:
+			anim = "jump2"
+		else: anim = "jump"
+		
+		
 	elif Input.is_action_pressed("ducken"): anim = "duck"
 	elif direction_x != 0: anim = "run"
 	
@@ -80,4 +85,6 @@ func die():
 	await get_tree().create_timer(0.4).timeout
 	get_tree().reload_current_scene()
 
+func portal_animation():
+	animated_sprite.play("potal_animation")
 	

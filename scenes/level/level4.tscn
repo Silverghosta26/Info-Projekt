@@ -230,12 +230,15 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Player" parent="tilemaps" unique_id=1139590716 instance=ExtResource("2_pjvq8")]
 z_index = 5
-position = Vector2(-1473, -145)
+position = Vector2(-1473, -143)
 
 [node name="Camera2D" type="Camera2D" parent="tilemaps/Player" unique_id=1209672904]
-visible = false
-position = Vector2(71, -19)
+position = Vector2(1, -14)
 zoom = Vector2(4, 4)
+process_callback = 0
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 1.0
 script = ExtResource("3_fh7g5")
 
 [node name="foreground" type="TileMapLayer" parent="tilemaps" unique_id=332593773]
@@ -254,12 +257,8 @@ position = Vector2(-191, 169)
 shape = SubResource("WorldBoundaryShape2D_j7e35")
 
 [node name="exit" parent="." unique_id=1044100374 instance=ExtResource("6_ta61x")]
-<<<<<<< HEAD
-position = Vector2(-877, 346)
+position = Vector2(-877, 356)
 script = null
-=======
-position = Vector2(-868, 363)
->>>>>>> main
 
 [node name="enter" parent="." unique_id=1287096067 instance=ExtResource("6_ta61x")]
 position = Vector2(-1837, -729)

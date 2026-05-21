@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dlj800qnewf45" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://davokuxhviw17" path="res://Scripts/Phsiks based/player.gd" id="1_g2els"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_500nw"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qxwu"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(0, 224, 32, 32)
@@ -42,6 +46,46 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm1rd"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_botj2"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmv4o"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghxv4"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkktj"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8i77"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi5a8"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un6gw"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmg5b"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyos4"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("1_3vyb7")
@@ -110,6 +154,14 @@ region = Rect2(224, 96, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_500nw")
+}],
+"loop": true,
+"name": &"1 for editor",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 0.4,
 "texture": SubResource("AtlasTexture_0qxwu")
 }, {
@@ -152,12 +204,52 @@ animations = [{
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_lm1rd")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_botj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmv4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghxv4")
+}],
+"loop": true,
+"name": &"jump2",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkktj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8i77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi5a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un6gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmg5b")
+}, {
+"duration": 7.9,
+"texture": SubResource("AtlasTexture_cyos4")
+}],
+"loop": false,
+"name": &"potal_animation",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -224,16 +316,16 @@ collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1101220497]
+position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"die"
+animation = &"potal_animation"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1549573807]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="hurtbox" type="CollisionShape2D" parent="." unique_id=2088895854]
+visible = false
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_qhqgy")

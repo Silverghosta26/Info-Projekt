@@ -170,6 +170,10 @@ func apply_gravity(delta):
 func update_tile_state():
 	icemove = false
 	watermove = false
+	air_1 = false
+	air_2 = false
+	air_3 = false
+	air_4 = false
 	check_tiles_at_position(global_position + Vector2(0, 10))
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -183,17 +187,20 @@ func check_tiles_at_position(pos):
 		if tm: handle_tile(tm.get_cell_atlas_coords(tm.local_to_map(tm.to_local(pos))))
 
 func handle_tile(atlas_coords):
-	if atlas_coords in ice_tiles: icemove = true
-	if atlas_coords in water_tiles: watermove = true
-	if atlas_coords in air_1_tiles: air_1 = true
-	else: air_1 = false
-	if atlas_coords in air_2_tiles: air_2 = true
-	else: air_2 = false
-	if atlas_coords in air_3_tiles: air_3 = true
-	else: air_3 = false
-	if atlas_coords in air_4_tiles: air_4 = true
-	else: air_4 = false
-	if atlas_coords in spike_tiles: self.die()
+	if atlas_coords in ice_tiles: 
+		icemove = true
+	if atlas_coords in water_tiles: 
+		watermove = true
+	if atlas_coords in air_1_tiles: 
+		air_1 = true
+	if atlas_coords in air_2_tiles: 
+		air_2 = true
+	if atlas_coords in air_3_tiles: 
+		air_3 = true
+	if atlas_coords in air_4_tiles: 
+		air_4 = true		
+	if atlas_coords in spike_tiles: 
+		self.die()
 	if atlas_coords in tj:
 		if velocity.y >400 :
 			velocity.y = -velocity.y
