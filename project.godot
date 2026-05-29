@@ -25,7 +25,10 @@ Settings="*uid://nfc5oyytmleo"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/resizable=false
+window/stretch/scale=1.7
 
 [dotnet]
 
@@ -34,7 +37,7 @@ project/assembly_name="Info-Projekt"
 [importer_defaults]
 
 animation_library={
-&"animation/fps": 120.0,
+&"animation/fps": 60.0,
 &"nodes/root_scale": 4.0
 }
 
@@ -84,8 +87,14 @@ waterdown={
 ]
 }
 
+[layer_names]
+
+2d_render/default_gravity_vector=Vector2(3.062, 1)
+
 [physics]
 
+common/physics_ticks_per_second=120
+common/max_physics_steps_per_frame=12
 3d/physics_engine="Jolt Physics"
 
 [rendering]

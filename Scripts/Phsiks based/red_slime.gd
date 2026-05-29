@@ -8,11 +8,7 @@ var direction = 1
 @onready var rayleft: RayCast2D = $rayleft
 
 func _init() -> void:
-	stompable = true 
-
-
-
-
+	stompable = false 
 
 func _physics_process(delta: float) -> void:
 	if is_alive:

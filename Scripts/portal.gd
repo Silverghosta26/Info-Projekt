@@ -14,7 +14,9 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if self.name == "enter":
 		var exitpoint = level[i]
+		await get_tree().create_timer(0.05).timeout
 		body.disable_input_for(1.0)
+		body.portal_animation()
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file(exitpoint)
 	if self.name == "exit":
