@@ -247,6 +247,6 @@ shape = SubResource("WorldBoundaryShape2D_j7e35")
 position = Vector2(57, 17)
 
 [node name="enter" parent="." unique_id=1287096067 instance=ExtResource("6_tmfup")]
-position = Vector2(43, -131)
+position = Vector2(-41, -176)
 
 [connection signal="body_exited" from="enter" to="exit" method="_on_enter_body_exited"]

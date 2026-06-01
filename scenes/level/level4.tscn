@@ -230,7 +230,7 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Player" parent="tilemaps" unique_id=1139590716 instance=ExtResource("2_pjvq8")]
 z_index = 5
-position = Vector2(-1473, -143)
+position = Vector2(-854, 369)
 
 [node name="Camera2D" type="Camera2D" parent="tilemaps/Player" unique_id=1209672904]
 position = Vector2(1, -14)
