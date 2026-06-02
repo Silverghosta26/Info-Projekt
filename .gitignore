@@ -2,4 +2,11 @@
 .godot/
 /android/
 
-# Godot assets ignore
+# Exports (only local needed)
+export_presets.cfg
+
+# VS Code settings
+.vscode/
+# OS generated files
+.DS_Store
+Thumbs.db
