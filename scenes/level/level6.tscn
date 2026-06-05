@@ -225,17 +225,17 @@ rotation = 0.0053314194
 
 [node name="Player" parent="." unique_id=1139590716 instance=ExtResource("2_x7ivo")]
 process_priority = 5
-position = Vector2(-182, -32)
+position = Vector2(-189, -20)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1583720375]
-position = Vector2(0, 3)
+position = Vector2(2, -18)
 zoom = Vector2(2, 2)
 limit_bottom = 800
 position_smoothing_enabled = true
 script = ExtResource("3_0h83p")
 
 [node name="exit" parent="." unique_id=1044100374 instance=ExtResource("6_ibwbu")]
-position = Vector2(-198, -33)
+position = Vector2(-218, -29)
 
 [node name="enter" parent="." unique_id=1287096067 instance=ExtResource("6_ibwbu")]
 position = Vector2(3579, -20)
