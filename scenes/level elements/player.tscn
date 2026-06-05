@@ -63,6 +63,30 @@ region = Rect2(160, 32, 32, 32)
 atlas = ExtResource("1_3vyb7")
 region = Rect2(192, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n63go"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5aco"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvm1n"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oc21"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ce0s"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ioiy"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(96, 128, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkktj"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(96, 128, 32, 32)
@@ -196,7 +220,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqkch")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_qlg0r")
 }],
 "loop": true,
@@ -227,6 +251,29 @@ animations = [{
 "loop": true,
 "name": &"jump2",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_n63go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5aco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvm1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oc21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ce0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ioiy")
+}],
+"loop": true,
+"name": &"portal_exit",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -318,7 +365,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1101220497]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"potal_animation"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1549573807]

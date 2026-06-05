@@ -2,9 +2,9 @@ extends CharacterBody2D
 class_name PhysicsEntity
 
 # Physik-Konstanten
-const jump_speed = 1.5
+var jump_speed = 1
 const SPEED = 190.0 
-const JUMP_VELOCITY = -320.0 * jump_speed 
+var JUMP_VELOCITY = -400.0 * jump_speed 
 const ACCEL_NORMAL = 1000.0  
 const FRICTION_NORMAL = 1000.0
 const ACCEL_ICE = 400.0
@@ -35,6 +35,7 @@ var swap_timer2 := 0.0
 var swap_timer3 := 0.0
 var swap_timer4 := 0.0
 var is_alive = true
+
 @export var stompable = true
 @export var boostable = true
 # Tile Definitionen 
@@ -141,14 +142,21 @@ func apply_physics(delta: float, input_dir: Vector2, wants_to_jump: bool):
 	move_and_slide()
 	update_tile_state()
 	handle_water_exit()
+	
+
 
 
 func apply_gravity(delta):
-	var grav = get_gravity() * delta * jump_speed
+	var grav = get_gravity() * delta * jump_speed 
 	
 	if watermove:
 		velocity.y += WATER_GRAVITY * delta
 	else:
+		if velocity.y > 0:
+			jump_speed = 1.5
+		else:
+			jump_speed = 1
+		
 		
 		if air_2:
 			velocity.x += grav.y
@@ -203,7 +211,7 @@ func handle_tile(atlas_coords):
 		self.die()
 	if atlas_coords in tj:
 		if velocity.y >400 :
-			velocity.y = -velocity.y
+			velocity.y = -velocity.y +velocity.y*0.2
 		else:velocity.y =-400
 
 func handle_water_exit():
