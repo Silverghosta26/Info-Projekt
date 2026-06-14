@@ -1,5 +1,4 @@
 extends CharacterBody2D
-class_name PhysicsEntity
 
 # Physik-Konstanten
 var jump_speed = 1

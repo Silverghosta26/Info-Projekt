@@ -25,8 +25,8 @@ Settings="*uid://nfc5oyytmleo"
 
 [display]
 
-window/size/resizable=false
-window/stretch/scale=1.7
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [dotnet]
 
